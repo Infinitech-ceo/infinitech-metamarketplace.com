@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinitech - 登録完了</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            background-color: #002a1a;
+            color: white;
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>会員登録ありがとうございます！</h1>
+    <p id="user-info"></p>
+
+    <script>
+        // localStorageからデータを取得
+        const name = localStorage.getItem("subscription_name");
+        const username = localStorage.getItem("subscription_username");
+        const email = localStorage.getItem("subscription_email");
+
+        if (name && email) {
+            document.getElementById("user-info").innerHTML = 
+                `登録情報<br><b>名前:</b> ${name}<br><b>ユーザー名:</b> ${username}<br><b>メール:</b> ${email}`;
+            
+            // ここでサーバーにデータ送信
+            fetch("register.php", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ name, username, email })
+            });
+
+            // 保存データ削除（セキュリティ対策）
+            localStorage.removeItem("subscription_name");
+            localStorage.removeItem("subscription_username");
+            localStorage.removeItem("subscription_email");
+        } else {
+            document.getElementById("user-info").innerText = "エラー: 登録情報が見つかりません。";
+        }
+    </script>
+</body>
+</html>

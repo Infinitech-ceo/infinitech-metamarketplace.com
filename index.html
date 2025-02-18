@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinitech - 会員登録</title>
+    <style>
+        body {
+            background-color: #002a1a;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 420px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(8px);
+            text-align: left;
+        }
+        h1 {
+            color: #D0A900;
+            text-align: center;
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-top: 12px;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 16px;
+        }
+        input:focus {
+            outline: none;
+            border-color: #D0A900;
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .button {
+            width: 100%;
+            background: linear-gradient(to right, #D0A900, #b38f00);
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 30px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s, transform 0.2s;
+            font-weight: bold;
+        }
+        .button:hover {
+            background: linear-gradient(to right, #b38f00, #8c6d00);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>会員登録</h1>
+        <form id="subscription-form">
+            <label for="name">名前(本名)</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="username">ユーザー名</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="email">メールアドレス</label>
+            <input type="email" id="email" name="email" required>
+            
+            <button type="button" class="button" onclick="saveAndRedirect()">登録して確認</button>
+        </form>
+    </div>
+
+    <script>
+        function saveAndRedirect() {
+            // 入力データを取得
+            const name = document.getElementById("name").value;
+            const username = document.getElementById("username").value;
+            const email = document.getElementById("email").value;
+
+            // 入力チェック（空欄がないか確認）
+            if (!name || !username || !email) {
+                alert("すべての項目を入力してください。");
+                return;
+            }
+
+            // localStorage にデータを保存
+            localStorage.setItem("subscription_name", name);
+            localStorage.setItem("subscription_username", username);
+            localStorage.setItem("subscription_email", email);
+
+            // 新しいタブで subscription.html を開く
+            window.open("subscription.html", "_blank");
+        }
+    </script>
+</body>
+</html>

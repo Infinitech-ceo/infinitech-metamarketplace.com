@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ログイン - Infinitech</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #00552e;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            max-width: 400px;
+            padding: 40px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            color: #333;
+            text-align: center;
+        }
+        h2 {
+            color: #D0A900;
+            font-size: 26px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            padding: 14px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            background-color: #D0A900;
+            color: #00552e;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+        button:hover {
+            background-color: #b58f00;
+            transform: scale(1.05);
+        }
+        .register-link {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        .register-link a {
+            color: #D0A900;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>ようこそ、Infinitechへ</h2>
+        <p>メンバー専用のサービスにアクセスするにはログインしてください。</p>
+        <form action="dashboard.html" method="POST">
+            <input type="email" name="email" placeholder="メールアドレス" required>
+            <input type="password" name="password" placeholder="パスワード" required>
+            <button type="submit">ログイン</button>
+        </form>
+        <div class="register-link">
+            アカウントをお持ちでないですか？ <a href="register.html">今すぐ無料登録</a>
+        </div>
+    </div>
+</body>
+</html>
