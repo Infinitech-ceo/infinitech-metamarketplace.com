@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Infinitech - メタバースの未来</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body {
             background-color: #00552e;
@@ -18,7 +19,7 @@
         }
         header {
             background: linear-gradient(to right, #D0A900, #b38f00);
-            padding: 20px;
+            padding: 15px 20px;
             font-size: 24px;
             font-weight: bold;
             position: fixed;
@@ -29,22 +30,14 @@
             align-items: center;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             z-index: 1100;
-            height: 70px;
-            padding: 10px 20px;
         }
         .header-title {
-            margin-left: 10px; /* タイトルを左寄せ */
             flex-grow: 1;
-            text-align: left;
         }
         .menu-icon {
             font-size: 30px;
             cursor: pointer;
-            padding: 10px;
             transition: transform 0.3s;
-            position: fixed;
-            right: 20px;
-            top: 20px;
         }
         .menu-icon:hover {
             transform: scale(1.1);
@@ -54,7 +47,7 @@
             flex-direction: column;
             background-color: rgba(208, 169, 0, 0.95);
             position: fixed;
-            top: 80px;
+            top: 70px;
             left: 0;
             width: 100%;
             text-align: center;
@@ -63,7 +56,7 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             transform: translateY(-10px);
             opacity: 0;
-            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+            transition: opacity 0.3s, transform 0.3s;
         }
         .menu.active {
             display: flex;
@@ -173,4 +166,3 @@
     </script>
 </body>
 </html>
-
